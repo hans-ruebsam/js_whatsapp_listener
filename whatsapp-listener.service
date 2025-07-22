@@ -1,0 +1,14 @@
+[Unit]
+Description=WhatsApp Listener Node.js Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/<user_name>/js_whatsapp_listener/listener.js
+Restart=always
+RestartSec=10
+User=<user_name>
+Environment=NODE_ENV=production
+WorkingDirectory=/home/<user_name>/js_whatsapp_listener
+
+[Install]
+WantedBy=multi-user.target
