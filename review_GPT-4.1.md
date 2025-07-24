@@ -170,15 +170,15 @@ app.get('/health', (req, res) => {
 
 ## Summary Table
 
-| Area                | Problem                                   | Suggestion/Example                      |
-|---------------------|-------------------------------------------|-----------------------------------------|
-| Error Handling      | No retries, no shutdown, no global catch  | Retry logic, SIGINT handler, global catch|
-| Config Management   | Hardcoded values                          | Use `.env` and config files             |
-| Input Validation    | No validation, no limits                  | Middleware, rate limit, body size limit |
-| Security            | No auth, no validation                    | Token auth, input validation            |
-| Maintainability     | Inline config, no docs/types              | Extract config, add JSDoc, use TS       |
-| Monitoring          | No health endpoint                        | Add `/health` endpoint                  |
-| Reliability         | Data loss if logger down                  | Use message queue                       |
+| Area              | Problem                                  | Suggestion/Example                        |
+| ----------------- | ---------------------------------------- | ----------------------------------------- |
+| Error Handling    | No retries, no shutdown, no global catch | Retry logic, SIGINT handler, global catch |
+| Config Management | Hardcoded values                         | Use `.env` and config files               |
+| Input Validation  | No validation, no limits                 | Middleware, rate limit, body size limit   |
+| Security          | No auth, no validation                   | Token auth, input validation              |
+| Maintainability   | Inline config, no docs/types             | Extract config, add JSDoc, use TS         |
+| Monitoring        | No health endpoint                       | Add `/health` endpoint                    |
+| Reliability       | Data loss if logger down                 | Use message queue                         |
 
 ---
 
