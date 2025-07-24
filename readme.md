@@ -26,7 +26,6 @@ Dieses Projekt besteht aus zwei gekoppelten Node.js-Diensten, die gemeinsam What
 
 - Linux-Server mit systemd
 - Node.js 18+
-- Chromium (wird automatisch von Puppeteer heruntergeladen)
 - Keine Desktop-Oberfläche erforderlich (Headless-Betrieb)
 
 ---
@@ -46,7 +45,7 @@ npm install
 ```bash
 npm init -y  
 
-npm install @open-wa/wa-automate puppeteer axios express body-parser winston winston-daily-rotate-file qrcode-terminal  
+npm install @open-wa/wa-automate axios express body-parser winston winston-daily-rotate-file qrcode-terminal  
 
 npm install dotenv
 ````
