@@ -1,5 +1,4 @@
 const { create } = require('@open-wa/wa-automate');
-const puppeteer = require('puppeteer');
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 
@@ -8,7 +7,6 @@ create({
     authStrategy: 'local',
     sessionDataPath: './session',
     headless: 'new',
-    executablePath: puppeteer.executablePath(),
     args: ['--no-sandbox'],
     qrTimeout: 0,
     qrRefreshS: 60,
