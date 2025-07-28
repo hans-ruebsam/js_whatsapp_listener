@@ -5,6 +5,11 @@ require("winston-daily-rotate-file");
 const fs = require("fs");
 const path = require("path");
 
+// Get log file extension from command line argument or default to .log
+const logExtension = process.argv[2] || ".log";
+// Ensure extension starts with a dot
+const fileExtension = logExtension.startsWith('.') ? logExtension : '.' + logExtension;
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -14,7 +19,7 @@ if (!fs.existsSync(logDir)) {
 }
 
 const transport = new winston.transports.DailyRotateFile({
-    filename: path.join(logDir, "%DATE%.log"),
+    filename: path.join(logDir, `%DATE%${fileExtension}`),
     datePattern: "YYYY-MM-DD",
     zippedArchive: false,
     maxSize: "5m",
@@ -41,4 +46,5 @@ app.post("/log", (req, res) => {
 const PORT = process.env.PORT || 8300;
 app.listen(PORT, () => {
     console.log(`Log-Server läuft auf http://localhost:${PORT}/log`);
+    console.log(`Log files will be saved with extension: ${fileExtension}`);
 });
